@@ -49,3 +49,4 @@ console.log("---\n");
 
 adicionarProdutos(produtoZ);
 console.log(vitrineDeProdutos);
+console.log(vitrineDeProdutos[1]);
