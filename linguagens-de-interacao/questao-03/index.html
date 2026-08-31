@@ -14,6 +14,21 @@ Muitas vezes, mesmo com toda a validação, um erro inesperado pode acontecer ao
     <title>Document</title>
 </head>
 <body>
-    
+    <form>
+        <input id="nome" name="nome" placeholder="Digite seu nome" required minlength="5">
+        <input type="email" id="mail" placeholder="Digite seu e-mail">
+        <button>Enviar</button>
+        
+    </form>
+    <script>
+        let email = document.getElementById("mail")
+        mail.addEventListener("input", function(event){
+            if (mail.validity.typeMismatch){
+                mail.setCustomValidity("E-Mail Válido por favor");
+            } else {
+                mail.setCustomValidity("");
+            }
+        });
+    </script>
 </body>
 </html>
