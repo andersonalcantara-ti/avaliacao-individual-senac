@@ -15,38 +15,79 @@ Uma função recebe dados (parâmetros), executa uma tarefa e pode devolver um r
 */
 
 //Bah! Eu sei que é só pra escrever em forma de texto, mas quis criar o programa XD
+//Objetivo: Passar do node.js para o ambiente html ^^
 
-let vitrineDeProdutos = [
+let vitrineDeProdutos = [    //cria um array, com objetos.
     {
         id: 1,
         nome: "produtoX",
         cor: "amarelo",
-        preco: 1.40
+        descricao: "",
+        preco: 1.40,
+        estoque: 50
     },
     {
         id: 2,
         nome: "produtoY",
         cor: "vermelho",
-        preco: 2.50
+        descricao: "",
+        preco: 2.50,
+        estoque: 25
     },
 ];
 
-console.log(vitrineDeProdutos[1].preco.toFixed(2));
+console.log(vitrineDeProdutos[1].preco.toFixed(2)); //mostra o preço com 2 casas.
 
-function adicionarProdutos(novoProduto){
+function adicionarProdutos(novoProduto){  //função para adicionar novos produtos
     vitrineDeProdutos.push(novoProduto);
 };
 
-let produtoZ = {
+let produtoZ = {  //cria um produto novo
     id: 3,
     nome: "ProdutoZ",
     cor: "Laranja",
     preco: 5.50
 };
 
-console.log(vitrineDeProdutos);
+console.log(vitrineDeProdutos); //mostra o array
 console.log("---\n");
 
-adicionarProdutos(produtoZ);
+adicionarProdutos(produtoZ);  //usa a função para adicionar o produto novo
 console.log(vitrineDeProdutos);
 console.log(vitrineDeProdutos[1]);
+
+console.log("---Produto Adicionado---\n");
+let produtoA = {  //cria um novo objeto
+    id: 4,
+    nome: "ProdutoA",
+    cor: "Verde",
+    descricao: "",
+    preco: 4.00,
+    estoque: 2
+}
+adicionarProdutos(produtoA);
+console.log(vitrineDeProdutos);
+console.log("---\n");
+console.log("O tamanho do array é: " + vitrineDeProdutos.length);
+console.log(vitrineDeProdutos[2]);
+console.log("---\n");
+console.log("--- Atualizar as informações do ProdutoZ---\n");
+vitrineDeProdutos[2].descricao = "Produto Oficial"; //adiciona descrição ao produtoZ
+vitrineDeProdutos[2].estoque = 10; //adiciona quantidade de estoque ao produtoZ
+console.log(vitrineDeProdutos[2]); //exibe o produtoZ já atualizado com as 2 novas informações
+
+console.log("---\n");
+console.log("---SEPARADOR---\n");
+console.log("---\n");
+
+console.log(vitrineDeProdutos); //exibe o array completo com todas as modificações
+
+console.log("---\n");
+console.log("---SEPARADOR---\n");
+console.log("---\n");
+
+//cria a função para verificar estoque, mas ao invés de procurar pelo ID, vou provurar pelo atributo estoque de cada item.
+
+function verificarEstoque(){};
+
+console.log(vitrineDeProdutos[0].estoque);
