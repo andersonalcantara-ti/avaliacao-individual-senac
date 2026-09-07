@@ -30,19 +30,27 @@ O formato JSON é ideal para organizar os dados que serão guardados no armazena
     <section>
         <h1>Lista de Tarefas</h1>
 
-        <form><!--Formulário-->
-            <label for="tarefas">Crie uma Tarefa</label><br>
-            <input type="text" name="tarefas" id="tarefas" placeholder="Digite a nova Tarefa" minlength="5" maxlength="10" required><br>
+        <form id="form-tarefas"><!--Formulário-->
+            <label for="input-tarefas">Crie uma Tarefa</label><br>
+            <input type="text" name="form-tarefas" id="input-tarefas" placeholder="Digite a nova Tarefa" minlength="5" maxlength="10" required><br>
             <button id="btn">Adicionar Tarefa</button>
         </form>
 
         <div><!--Lista de Tarefas Não Ordenada-->
-            <ul></ul>
+            <ul id="lista-de-tarefas"></ul>
         </div>
     </section>
 
     <script>//Lógica
+        const form = document.querySelector("#form-tarefas");
+        const inputTarefas = document.querySelector("#input-tarefas");
+        const listaDeTarefas = document.querySelector("#lista-de-tarefas");
 
+        const Tarefas = [{id:0, nome:""}];
+
+        function adicionarTarefas(){
+
+        }
     </script>
     
 </body>
