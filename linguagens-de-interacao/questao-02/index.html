@@ -52,7 +52,24 @@ O formato JSON é ideal para organizar os dados que serão guardados no armazena
         function adicionarTarefas(){
             form.addEventListener("submit", function(event){
                 event.preventDefault();
-                console.log("Teste: Botão Clicado");
+                console.log("Teste: Botão Clicado");//teste, apenas
+
+                const novaTarefa = inputTarefas.value.trim(); //Pega o que foi digitado no campo input
+                if (novaTarefa !== ""){
+                    const newTarefa = {
+                        id: Date.now(),
+                        nome: novaTarefa
+                    };
+                    Tarefas.push(novaTarefa);
+                    
+                    const li = document.createElement("li");
+                    li.dataset.id = newTarefa.id;
+                    li.textContent = newTarefa.nome;
+
+                    listaDeTarefas.appendChild(li);
+
+                    inputTarefas.value = ""; //reset o campo input
+                };
             });
         };
 
