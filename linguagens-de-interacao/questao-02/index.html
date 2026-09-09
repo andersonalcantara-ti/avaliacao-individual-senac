@@ -17,6 +17,7 @@ O formato JSON é ideal para organizar os dados que serão guardados no armazena
 
     <!--CSS-->
     <style>
+        /*Reset*/
         *{
             margin: 0;
             padding: 0;
@@ -29,11 +30,11 @@ O formato JSON é ideal para organizar os dados que serão guardados no armazena
 <body>
     <section>
         <h1>Lista de Tarefas</h1>
-
+       
         <form id="form-tarefas"><!--Formulário-->
             <label for="input-tarefas">Crie uma Tarefa</label><br>
             <input type="text" name="form-tarefas" id="input-tarefas" placeholder="Digite a nova Tarefa" minlength="5" maxlength="10" required><br>
-            <button id="btn">Adicionar Tarefa</button>
+            <button type="submit" id="btn">Adicionar Tarefa</button>
         </form>
 
         <div><!--Lista de Tarefas Não Ordenada-->
@@ -46,11 +47,16 @@ O formato JSON é ideal para organizar os dados que serão guardados no armazena
         const inputTarefas = document.querySelector("#input-tarefas");
         const listaDeTarefas = document.querySelector("#lista-de-tarefas");
 
-        const Tarefas = [{id:0, nome:""}];
+        const Tarefas = [];//Cria um array para guardar as tarefas
 
         function adicionarTarefas(){
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+                console.log("Teste: Botão Clicado");
+            });
+        };
 
-        }
+        adicionarTarefas(); //chama a função
     </script>
     
 </body>
