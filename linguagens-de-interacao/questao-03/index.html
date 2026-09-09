@@ -7,28 +7,62 @@ Muitas vezes, mesmo com toda a validação, um erro inesperado pode acontecer ao
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Questao 03</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        };
+    </style>
 </head>
+
 <body>
-    <form>
-        <input id="nome" name="nome" placeholder="Digite seu nome" required minlength="5">
-        <input type="email" id="mail" placeholder="Digite seu e-mail">
-        <button>Enviar</button>
+    <section>
+        <h1>Formulário</h1>
+
+        <form id="formulario">
+            <div id="campo-nome">
+                <label>Insira seu nome</label>
+                <input id="nome" placeholder="Digite seu Nome" required>
+            </div>
+            
+            <div id="campo-email">
+                <label>Insira seu E-Mail</label>
+                <input id="mail" placeholder="Digite seu E-Mail" required>
+            </div>
+
+            <button type="submit" id="btn">Enviar</button>
+        </form>
+
+
+
+
         
-    </form>
-    <script>
-        let email = document.getElementById("mail")
-        mail.addEventListener("input", function(event){
-            if (mail.validity.typeMismatch){
-                mail.setCustomValidity("E-Mail Válido por favor");
-            } else {
-                mail.setCustomValidity("");
-            }
-        });
-    </script>
+
+        <form>
+            <input id="nome" name="nome" placeholder="Digite seu nome" required minlength="5">
+            <input type="email" id="mail" placeholder="Digite seu e-mail">
+            <button>Enviar</button>
+
+        </form>
+        <script>
+            let email = document.getElementById("mail")
+            mail.addEventListener("input", function (event) {
+                if (mail.validity.typeMismatch) {
+                    mail.setCustomValidity("E-Mail Válido por favor");
+                } else {
+                    mail.setCustomValidity("");
+                }
+            });
+        </script>
+    </section>
 </body>
+
 </html>
